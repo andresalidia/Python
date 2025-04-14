@@ -258,6 +258,24 @@ lista_copia = lista.copy() # Isso cria uma cópia da lista.
 # Isso significa que alterações feitas na lista original não afetarão a cópia e vice-versa.
 print("Cópia da lista:", lista_copia) # a saída será: 1, 2, 3, 4, 5
 
+# Metodo sorted()
+# Você pode ordenar os elementos da lista usando a função sorted().
+# A diferença entre o método sort() e a função sorted() é que o método sort() modifica a lista original,
+# enquanto a função sorted() retorna uma nova lista ordenada.
+# Por exemplo:
+lista = [5, 3, 1, 4, 2]
+lista_ordenada = sorted(lista) # Isso retorna uma nova lista ordenada.
+print("Lista ordenada:", lista_ordenada) # a saída será: [1, 2, 3, 4, 5]
+# A lista original permanece inalterada.
+print("Lista original:", lista) # a saída será: [5, 3, 1, 4, 2]
+# A sintaxe do sorted() é: sorted(iterável, key=None, reverse=False).
+# O iterável é a lista que você deseja ordenar.
+# O parâmetro key é uma função de comparação personalizada (opcional).
+# O parâmetro reverse é um booleano que indica se a lista deve ser ordenada em ordem decrescente (opcional).
+# Por padrão, o parâmetro reverse é False, o que significa que a lista será ordenada em ordem crescente.
+# A função sorted() não modifica a lista original.
+# Por isso você precisa atribuir o resultado a uma nova variável.
+# Se você não fizer isso, a variável que você atribuiu o resultado não terá o valor esperado.
 
 
 
@@ -315,6 +333,56 @@ print("Lista aninhada após adicionar nova lista:", lista_aninhada) # a saída s
 # Por exemplo:
 lista_aninhada.insert(1, [7, 8, 9]) # Isso adiciona uma nova lista na posição 1 da lista aninhada.
 print("Lista aninhada após adicionar nova lista na posição 1:", lista_aninhada) # a saída será: [[1, 2, 3], [7, 8, 9], ['a', 'b', 'c'], [4, 5, 6]]
+
+
+# Percorrendo elementos de uma Lista
+
+# Laço for:
+# Você pode percorrer os elementos da lista usando um laço for.
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+for elemento in lista: # Isso percorre todos os elementos da lista.
+    print("Elemento:", elemento) # a saída será: 1, 2, 3, 4, 5
+# Você também pode usar o índice para percorrer os elementos da lista.
+for i in range(len(lista)):
+    print("Elemento pelo índice:", lista[i]) # a saída será: 1, 2, 3, 4, 5
+
+
+# Laço while:
+# Você pode percorrer os elementos da lista usando um laço while.
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+i = 0
+while i < len(lista): # Isso percorre todos os elementos da lista.
+    print("Elemento:", lista[i]) # a saída será: 1, 2, 3, 4, 5
+    i += 1 # Incrementa o índice para percorrer o próximo elemento.
+
+
+
+
+# Maneira Comapacta de criar grandes listas:
+
+# Você pode criar listas grandes de maneira compacta usando a compreensão de listas.
+# Por exemplo:
+nova_lista = [x for x in range(10)] # Isso cria uma nova lista com os números de 0 a 9, pois o elemento do range(10) é exclusivo.
+print("Nova lista:", nova_lista) # a saída será: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# outra opção:
+
+quadrados = [x**2 for x in range(1,11)]# Irá mostrar os quadrados de 1 a 10.
+print("Quadrados de 1 a 10:", quadrados) # a saída será: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+# Você também pode adicionar uma condição para filtrar os elementos.
+# Por exemplo:
+nova_lista = [x for x in range(10) if x % 2 == 0] # Isso cria uma nova lista com os números pares de 0 a 9.
+print("Nova lista com números pares:", nova_lista) # a saída será: [0, 2, 4, 6, 8]
+
+
+
+
+
+#Funções úteis para listas:
+
+
 
 
 

@@ -25,6 +25,7 @@ print("Lista fatiada negativa:", fatiada_negativa) # a saída será: 2, 3, 4
 inversa = lista[::-1] # Isso retorna a lista invertida.
 print("Lista invertida:", inversa) # a saída será: 5, 4, 3, 2, 1
 
+
 # As listas também suportam operações de concatenação e repetição.
 # Você pode concatenar duas listas usando o operador +.
 # Por exemplo:
@@ -66,6 +67,36 @@ print("Lista após adicionar 10 na posição 2:", lista) # a saída será: 1, 2,
 # Nota: A diferença entre o append() e o insert() é que o append() adiciona o elemento ao final da lista,
 #  enquanto o insert() adiciona o elemento em uma posição específica.
 
+# A Atribuição simples em Python não copia dados. quando você atribui uma lista a uma variável,  a variável se refere à lista existente.
+# Quaisquer alterações feitas em uma variável afetará a lista original.
+# Por exemplo:
+lista1 = [1, 2, 3, 4, 5]
+lista2 = lista1 # Isso atribui a lista1 à lista2.
+# Agora, ambas as variáveis se referem à mesma lista.
+lista2.append(6) # Isso adiciona o número 6 à lista2.
+# Como lista1 e lista2 se referem à mesma lista, a alteração também afeta a lista1.
+print("Lista1 após adicionar 6:", lista1) # a saída será: 1, 2, 3, 4, 5, 6
+
+# Atribuiação a fatias também é possível.
+# isso até pode alterar o tamanho da lista ou remover todos os itens dela.
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+# Isso substitui os elementos do índice 1 ao 2 (o índice final é exclusivo) por 10 e 20.
+lista[1:3] = [10, 20]
+print("Lista após atribuição a fatias:", lista) # a saída será: 1, 10, 20, 4, 5
+# isso remove os elementos do índice 1 ao 2 (o índice final é exclusivo).
+lista[1:3] = []
+print("Lista após remover elementos:", lista) # a saída será: 1, 4, 5
+#Isso remove todos os elementos da lista.
+lista[:] = [] # Isso remove todos os elementos da lista.
+print("Lista após remover todos os elementos:", lista) # a saída será: []
+
+#Você pode saber o tamanho da lista usando a função len().
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+print("Tamanho da lista:", len(lista)) # a saída será: 5
+
+
 # Você também pode remover elementos da lista usando o método remove().
 # Por exemplo:
 lista = [1, 2, 3, 4, 5]
@@ -98,4 +129,38 @@ lista.clear() # Isso remove todos os elementos da lista.
 # Após usar o método clear(), a lista ficará vazia.
 print("Lista após remover todos os elementos:", lista) # a saída será: []
 
+# Você também pode verificar se um elemento está na lista usando o operador in.
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+elemento_existe = 3 in lista # Isso verifica se o número 3 está na lista.
+print("O elemento 3 está na lista?", elemento_existe) # a saída será: True
+# Você também pode usar o operador not in para verificar se um elemento não está na lista.
+# Por exemplo:
+elemento_nao_existe = 6 not in lista # Isso verifica se o número 6 não está na lista.
+print("O elemento 6 não está na lista?", elemento_nao_existe) # a saída será: True
 
+# É possível aninhar listas, ou seja, criar listas dentro de listas.
+# Por exemplo:
+lista_aninhada = [[1, 2, 3], ['a',' b', 'c']]
+# como funciona os índices em listas aninhadas?
+# Para acessar um elemento em uma lista aninhada, você pode usar múltiplos índices.
+# Por exemplo:
+elemento_aninhado = lista_aninhada[0][1] # Isso retorna o segundo elemento da primeira lista aninhada, que é 2.
+print("Elemento aninhado:", elemento_aninhado) # a saída será: 2
+# Você também pode adicionar listas aninhadas usando o método append().
+# Por exemplo:
+lista_aninhada.append([4, 5, 6]) # Isso adiciona uma nova lista ao final da lista aninhada.
+print("Lista aninhada após adicionar nova lista:", lista_aninhada) # a saída será: [[1, 2, 3], ['a', 'b', 'c'], [4, 5, 6]]
+# Você também pode adicionar listas aninhadas usando o método insert().
+# Por exemplo:
+lista_aninhada.insert(1, [7, 8, 9]) # Isso adiciona uma nova lista na posição 1 da lista aninhada.
+print("Lista aninhada após adicionar nova lista na posição 1:", lista_aninhada) # a saída será: [[1, 2, 3], [7, 8, 9], ['a', 'b', 'c'], [4, 5, 6]]
+
+#Isso foi um pouco sobre listas em Python.
+#Para treinar fica esse desafio:
+# Gerenciador de Tarefas
+# Crie um programa que permita ao usuário:
+# ● Adicionar tarefas a uma lista
+# ● Marcar tarefas como concluídas (removendo-as da lista)
+# ● Listar todas as tarefas pendentes
+# ● Desafio extra: Adicionar prioridade às tarefas

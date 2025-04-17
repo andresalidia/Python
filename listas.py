@@ -382,7 +382,90 @@ print("Nova lista com números pares:", nova_lista) # a saída será: [0, 2, 4, 
 
 #Funções úteis para listas:
 
+#enumerate():
 
+# Você pode usar a função enumerate() para obter o índice e o valor de cada elemento da lista.
+# Isto é útil quando você precisa do índice e do valor ao mesmo tempo.
+# sintaxe: enumerate(iterável, start=0).
+# O iterável é a lista que você deseja enumerar.
+# O parâmetro start é o índice inicial (opcional). O padrão é 0.
+# Por exemplo:
+lista = ['a', 'b', 'c', 'd']
+for indice, valor in enumerate(lista):
+    print("Índice:", indice, "Valor:", valor) # a saída será: 0 a, 1 b, 2 c, 3 d
+ 
+# Você também pode especificar um índice inicial diferente.
+# Por exemplo:
+lista = ['a', 'b', 'c', 'd']
+for indice, valor in enumerate(lista, start=1):
+    print("Índice:", indice, "Valor:", valor) # a saída será: 1 a, 2 b, 3 c, 4 d
+
+
+
+
+#zip():
+
+# Você pode usar a função zip() para combinar duas ou mais listas em uma lista de tuplas.
+#sintaxe: zip(*iteráveis).
+# O parâmetro *iteráveis é uma ou mais listas que você deseja combinar.
+# A função zip() retorna um iterador de tuplas, onde cada tupla contém um elemento de cada lista.
+# Por exemplo:
+nome=['João', 'Maria', 'José']
+idade=[25, 30, 35]
+resultado = zip(nome, idade) # Isso combina as duas listas em uma lista de tuplas.
+print("Resultado:", list(resultado)) # a saída será: [('João', 25), ('Maria', 30), ('José', 35)]
+
+
+
+
+# map(func, lista):
+
+# Você pode usar a função map() para aplicar uma função a cada elemento da lista.
+# sintaxe: map(função, iterável).
+# O parâmetro função é a função que você deseja aplicar.
+# O parâmetro iterável é a lista que você deseja percorrer.
+# A função map() retorna um iterador com os resultados.
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+def quadrado(x):
+    return x**2
+resultado = map(quadrado, lista) # Isso aplica a função quadrado() a cada elemento da lista.
+print("Resultado:", list(resultado)) # a saída será: [1, 4, 9, 16, 25]
+
+
+# Você também pode usar uma função lambda para aplicar uma função anônima a cada elemento da lista.
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+resultado = map(lambda x: x**2, lista) # Isso aplica a função lambda a cada elemento da lista.
+print("Resultado:", list(resultado)) # a saída será: [1, 4, 9, 16, 25]
+
+# Você também pode usar a função map() para aplicar uma função a cada elemento de várias listas.
+# Por exemplo:
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+resultado = map(lambda x, y: x + y, lista1, lista2) # Isso aplica a função lambda a cada elemento das duas listas.
+print("Resultado da soma:", list(resultado)) # a saída será: [5, 7, 9]
+
+
+# filter(func, lista):
+# Você pode usar a função filter() para filtrar os elementos da lista com base em uma condição.
+# sintaxe: filter(função, iterável).
+# O parâmetro função é a função que você deseja aplicar.
+# A função deve retornar True ou False.
+# O parâmetro iterável é a lista que você deseja percorrer.
+# A função filter() retorna um iterador com os elementos que atendem à condição.
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+def par(x):
+    return x % 2 == 0
+resultado = filter(par, lista) # Isso aplica a função par() a cada elemento da lista.
+print("Resultado:", list(resultado)) # a saída será: [2, 4]
+
+# Você também pode usar uma função lambda para aplicar uma função anônima a cada elemento da lista.
+# Por exemplo:
+lista = [1, 2, 3, 4, 5]
+resultado = filter(lambda x: x % 2 == 0, lista) # Isso aplica a função lambda a cada elemento da lista.
+print("Resultado:", list(resultado)) # a saída será: [2, 4]
 
 
 

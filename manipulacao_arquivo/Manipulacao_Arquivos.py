@@ -44,7 +44,7 @@
 
 # Exercícios:
 
-Materias = ("Matemática", "Português", "História", "Geografia", "Ciências", "Educação Física", "Artes", "Inglês", "Física", "Química")
+Materias = ["Matemática", "Português", "História", "Geografia", "Ciências", "Educação Física", "Artes", "Inglês", "Física", "Química"]
 notas = [7.5, 8.0, 6.5, 7.0, 9.0, 8.5, 7.0, 8.0, 9.5, 10.0]
 
 # criando um arquivo chamado Boletim.txt e escrevendo as notas e matérias
@@ -55,10 +55,49 @@ notas = [7.5, 8.0, 6.5, 7.0, 9.0, 8.5, 7.0, 8.0, 9.5, 10.0]
 #forma é ineficiente, pois ele vai escrever linha por linha, e não de uma vez só.
 # então vamos fazer de uma forma mais eficiente, escrevendo tudo de uma vez só.
 # criando um arquivo chamado Boletim.txt e escrevendo as notas e matérias
-conteudo = ""
-for materia, nota in zip(Materias, notas):
-        conteudo+= f"{materia}: {nota}\n"
-with open("Boletim.txt", "w") as arq:
-    arq.write("Boletim:\n")
-    arq.write(conteudo)
-    
+# conteudo = {}
+# for materia, nota in zip(Materias, notas):
+#         conteudo.update({materia: nota})
+
+# with open("Boletim.txt", "w") as arq:
+#    for materia, nota in conteudo.items():
+#         arq.write(f"{materia}: {nota}\n")
+
+# exercicios cyber edux:
+
+ #1.
+with open("meu_arquivo.txt", "w+", encoding="utf-8") as arquivo:
+        arquivo.write("Olá, mundo!\n")
+        arquivo.write("Aprendendo Python!\n")
+        arquivo.write("O mundo é um lugar incrível!\n")
+        arquivo.write("o mundo é lindo")
+       
+        arquivo.seek(0)# joga o cursor para o começo do arquivo
+        mensagem = arquivo.read()
+        print(mensagem)
+        
+        palavras = mensagem.split()# separa as palavras
+        print(f"O Arquivo tem {len(palavras)} palavras")# mostra as palavras separadas
+        
+        arquivo.seek(0)
+        linhas = arquivo.readlines()
+        print(f"O total de linhas é {len(linhas)}")
+
+with open("Copia.txt", "w", encoding="utf-8") as destino:
+    destino.write(mensagem)
+    print("Arquivo Copiado com sucesso!")
+
+
+palavras = "mundo"
+with open("Copia.txt", "r", encoding="utf-8") as arquivo:
+    for numero_linha, linha in enumerate(arquivo, start=1):# o enumerate serve para contar as linhas
+        # e o start=1 serve para começar a contagem do 1, se não ele começa do 0
+        if palavras in linha:
+           print(f"linha{numero_linha}: {linha.strip()}")# strip() necessário, pois a cada 
+           #print uma nova linha é criada e o arquivo já tem um \n, então vai ficar com \n duplo
+    # outra forma de fazer isso é:
+    for linha in arquivo:
+        if palavras in linha:
+            print(linha.strip())
+
+            

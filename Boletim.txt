@@ -1,11 +1,10 @@
-Boletim:
-Matemática: 7.5
-Português: 8.0
-História: 6.5
+Matemï¿½tica: 7.5
+Portuguï¿½s: 8.0
+Histï¿½ria: 6.5
 Geografia: 7.0
-Ciências: 9.0
-Educação Física: 8.5
+Ciï¿½ncias: 9.0
+Educaï¿½ï¿½o Fï¿½sica: 8.5
 Artes: 7.0
-Inglês: 8.0
-Física: 9.5
-Química: 10.0
+Inglï¿½s: 8.0
+Fï¿½sica: 9.5
+Quï¿½mica: 10.0

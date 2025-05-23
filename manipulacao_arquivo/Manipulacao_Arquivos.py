@@ -19,11 +19,12 @@
 # 'wb' escrita em modo binário (tipo pra imagens)
 # O método open() retorna um objeto de arquivo que pode ser manipulado. ex: read(), write(), close().
 
-#vamos criar um arquivo e escrever nele
-with open("arquivo.txt", "w") as arquivo:
-    arquivo.write("Olá, mundo!\n")
-    arquivo.write("Este é um arquivo de exemplo.\n")
-    arquivo.write("Manipulação de arquivos em Python é fácil!\n")
+# with open("PrimeiroArquivo.txt", "r") as arq:
+#     conteudo = arq.read()
+#     print(conteudo)
 
-    conteudo = arquivo.read()
-    print(conteudo)
+with open("PrimeiroArquivo.txt", "w") as escrever:
+    escrever.write("Essa é uma mensagem com o método write()\n")
+    mensagem = "Isso é para mostrar que também posso colocar mensagens em uma variavel e depois escrever ela no arquivo\n"
+    escrever.write(mensagem)
+    escrever.write("Nota importante, esse comando vai subescrever tudo que ja estiver no arquivo,\n ou seja apaga tudo que já estava escrito antes e escreve essa nova mensagem.\n")

@@ -1,3 +1,0 @@
-Olá, mundo!
-Este é um arquivo de exemplo.
-Manipulação de arquivos em Python é fácil!

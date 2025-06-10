@@ -36,7 +36,7 @@ class JanelaPrincipal(QMainWindow):
         layout_h_principal.addLayout(layout_v_1, 5)
         layout_h_principal.addLayout(layout_v_2, 11)
 
-        layout_c = QWidget()# Cria um componente para hospedae o layou_v
+        layout_c = QWidget()# Cria um componente para hospedar o layou_v
         layout_c.setLayout(layout_h_principal) # Define 'layout_v' como layout do componente
         self.setCentralWidget(layout_c)
 

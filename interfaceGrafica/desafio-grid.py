@@ -5,8 +5,6 @@ class JanelaPrincipal(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        botao= QPushButton("Teste")
-        botao.setSizePolicy(QSizePolicy.Policy.Expanding,QSizePolicy.Policy.Expanding)
         caixa1 = CaixaCor("#04C4FF")
         caixa2 = CaixaCor("#246807")
         caixa3 = CaixaCor("#48525B")
